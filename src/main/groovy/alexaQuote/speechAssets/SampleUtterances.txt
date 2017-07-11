@@ -1,0 +1,15 @@
+GetMovieQuote give me a movie quote
+GetMovieQuote give me a random movie quote
+GetMovieQuote tell me a movie quote
+GetMovieQuote tell me a random movie quote
+GetMovieQuote for a random movie quote
+GetMovieQuote for a movie quote
+GetMovieQuote for a new movie quote
+
+GetFamousQuote give me a famous quote
+GetFamousQuote give me a random famous quote
+GetFamousQuote tell me a famous quote
+GetFamousQuote tell me a random famous quote
+GetFamousQuote for a random famous quote
+GetFamousQuote for a famous quote
+GetFamousQuote for a new famous quote
