@@ -36,8 +36,7 @@ class QuoteIntents {
 
     static SpeechletResponse getMovieQuote() {
         Quote quote = QuoteApiClient.movieQuote
-        
-        log.debug "quote -> ${quote}"
+        log.info "Movie quote -> ${quote}"
 
         String speechText = quote ?
             "Here is a quote from the movie ${quote.author}: ${quote.text}" : ERROR_MSG
@@ -47,8 +46,7 @@ class QuoteIntents {
 
     static SpeechletResponse getFamousQuote() {
         Quote quote = QuoteApiClient.famousQuote
-
-        log.debug "quote -> ${quote}"
+        log.info "Famous quote -> ${quote}"
 
         String speechText = quote ?
             "Here is a quote from ${quote.author}: ${quote.text}" : ERROR_MSG
