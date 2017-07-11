@@ -13,13 +13,13 @@ import groovy.util.logging.Slf4j
 @CompileStatic
 class QuoteIntents {
 
-     static SpeechletResponse getHelpResponse() {
-        String speechText = 'You can ask Quoter for me a movie or a famous quote, or, you can say exit. How can I help you?'
+    private static final String ERROR_MSG = 'Ummm... It seems that there is a problem with the Quotes. ' +
+                                            'Please try again later.'
 
-        PlainTextOutputSpeech speech = new PlainTextOutputSpeech(text: speechText)
-        Reprompt reprompt = new Reprompt(outputSpeech: speech)
+    static SpeechletResponse getHelpResponse() {
+        String speechText = 'You can ask Quoter for me a movie or a famous quote. How can I help you?'
 
-        return SpeechletResponse.newAskResponse(speech, reprompt)
+        return buildAskResponse(speechText)
     }
 
     static SpeechletResponse getGoodbye() {
@@ -29,20 +29,9 @@ class QuoteIntents {
     }
 
     static SpeechletResponse getHelloMessage() {
-        // Create speech output
         String speechText = 'Hello, welcome to Quoter. You can ask me for a new movie or a famous quote.'
-        PlainTextOutputSpeech speech = new PlainTextOutputSpeech(text: speechText)
 
-        // Create reprompt
-        Reprompt reprompt = new Reprompt(outputSpeech: speech)
-
-        // Create the Simple card content
-        SimpleCard card = new SimpleCard(
-            title: 'Quoter',
-            content: speechText
-        )
-
-        return SpeechletResponse.newAskResponse(speech, reprompt, card)
+        return buildAskResponse(speechText)
     }
 
     static SpeechletResponse getMovieQuote() {
@@ -51,18 +40,9 @@ class QuoteIntents {
         log.debug "quote -> ${quote}"
 
         String speechText = quote ?
-            "Here is a quote from the movie ${quote.author}: ${quote.text}" :
-            'Ummm. It seems that there is a problem with the Quotes. Please try again later.'
+            "Here is a quote from the movie ${quote.author}: ${quote.text}" : ERROR_MSG
 
-        // Create the Simple card content
-        SimpleCard card = new SimpleCard(
-            title: 'Quoter',
-            content: speechText
-        )
-
-        PlainTextOutputSpeech speech = new PlainTextOutputSpeech(text: speechText)
-
-        return SpeechletResponse.newTellResponse(speech, card)
+        return buildTellResponse(speechText)
     }
 
     static SpeechletResponse getFamousQuote() {
@@ -71,17 +51,30 @@ class QuoteIntents {
         log.debug "quote -> ${quote}"
 
         String speechText = quote ?
-            "Here is a quote from ${quote.author}: ${quote.text}" :
-            'Ummm. It seems that there is a problem with the Quotes. Please try again later'
+            "Here is a quote from ${quote.author}: ${quote.text}" : ERROR_MSG
 
-        // Create the Simple card content
-        SimpleCard card = new SimpleCard(
-            title: 'Quoter',
+        return buildTellResponse(speechText)
+    }
+
+    private static SimpleCard buildCard(String speechText) {
+        return new SimpleCard(
+            title: 'Quotes from Movies and Famous',
             content: speechText
         )
+    }
 
+    private static SpeechletResponse buildTellResponse(String speechText) {
         PlainTextOutputSpeech speech = new PlainTextOutputSpeech(text: speechText)
+        SimpleCard card = buildCard(speechText)
 
         return SpeechletResponse.newTellResponse(speech, card)
+    }
+
+    private static SpeechletResponse buildAskResponse(String speechText) {
+        PlainTextOutputSpeech speech = new PlainTextOutputSpeech(text: speechText)
+        Reprompt reprompt = new Reprompt(outputSpeech: speech)
+        SimpleCard card = buildCard(speechText)
+
+        return SpeechletResponse.newAskResponse(speech, reprompt, card)
     }
 }
