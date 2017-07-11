@@ -15,7 +15,7 @@ class QuoteApiClient {
     }
 
     static Quote getFamousQuote() {
-        return getRandomQuote('famouse')
+        return getRandomQuote('famous')
     }
 
     private static Quote getRandomQuote(String category) {
