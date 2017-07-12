@@ -1,10 +1,10 @@
 {
   "intents": [
     {
-      "intent": "GetMovieQuote"
+      "intent": "GetMovieQuoteIntent"
     },
     {
-      "intent": "GetFamousQuote"
+      "intent": "GetFamousQuoteIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"

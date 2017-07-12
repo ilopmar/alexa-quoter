@@ -1,15 +1,15 @@
-GetMovieQuote give me a movie quote
-GetMovieQuote give me a random movie quote
-GetMovieQuote tell me a movie quote
-GetMovieQuote tell me a random movie quote
-GetMovieQuote for a random movie quote
-GetMovieQuote for a movie quote
-GetMovieQuote for a new movie quote
+GetMovieQuoteIntent give me a movie quote
+GetMovieQuoteIntent give me a random movie quote
+GetMovieQuoteIntent tell me a movie quote
+GetMovieQuoteIntent tell me a random movie quote
+GetMovieQuoteIntent for a random movie quote
+GetMovieQuoteIntent for a movie quote
+GetMovieQuoteIntent for a new movie quote
 
-GetFamousQuote give me a famous quote
-GetFamousQuote give me a random famous quote
-GetFamousQuote tell me a famous quote
-GetFamousQuote tell me a random famous quote
-GetFamousQuote for a random famous quote
-GetFamousQuote for a famous quote
-GetFamousQuote for a new famous quote
+GetFamousQuoteIntent give me a famous quote
+GetFamousQuoteIntent give me a random famous quote
+GetFamousQuoteIntent tell me a famous quote
+GetFamousQuoteIntent tell me a random famous quote
+GetFamousQuoteIntent for a random famous quote
+GetFamousQuoteIntent for a famous quote
+GetFamousQuoteIntent for a new famous quote

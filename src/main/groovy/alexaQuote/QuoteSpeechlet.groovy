@@ -34,8 +34,8 @@ class QuoteSpeechlet implements Speechlet {
         String intentName = intent?.name
 
         switch (intentName) {
-            case 'GetMovieQuote': return QuoteIntents.movieQuote
-            case 'GetFamousQuote': return QuoteIntents.famousQuote
+            case 'GetMovieQuoteIntent': return QuoteIntents.movieQuote
+            case 'GetFamousQuoteIntent': return QuoteIntents.famousQuote
             case 'AMAZON.HelpIntent': return QuoteIntents.helpResponse
             case 'AMAZON.StopIntent': return QuoteIntents.goodbye
             case 'AMAZON.CancelIntent': return QuoteIntents.goodbye
