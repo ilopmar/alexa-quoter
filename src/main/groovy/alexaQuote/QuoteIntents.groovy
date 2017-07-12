@@ -17,7 +17,7 @@ class QuoteIntents {
                                             'Please try again later.'
 
     static SpeechletResponse getHelpResponse() {
-        String speechText = 'You can ask Quoter for me a movie or a famous quote. How can I help you?'
+        String speechText = 'You can ask me for a movie quote or a famous quote. How can I help you?'
 
         return buildAskResponse(speechText)
     }
@@ -29,7 +29,7 @@ class QuoteIntents {
     }
 
     static SpeechletResponse getHelloMessage() {
-        String speechText = 'Hello, welcome to Quoter. You can ask me for a new movie or a famous quote.'
+        String speechText = 'Hello, welcome to Quoter. You can ask me for a movie quote or a famous quote.'
 
         return buildAskResponse(speechText)
     }
