@@ -56,7 +56,7 @@ class QuoteIntents {
 
     private static SimpleCard buildCard(String speechText) {
         return new SimpleCard(
-            title: 'Quotes from Movies and Famous',
+            title: 'Quotes from movies and famous people',
             content: speechText
         )
     }
